@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizza Mondo</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navi">
+        <ul>
+          <li><a href="#" class="name">Pizza Mondo</a></li>
+          <li><a href="#menu" class="navi_menu">Меню</a></li>
+          <li><a href="#contacts" class="navi_menu">Контакты</a></li>
+          <li><a href="#reviews" class="navi_menu">Отзывы</a></li>
+          <li><a href="#adout_us" class="navi_menu">О нас</a></li>
+        </ul>
+      </nav>
+    </header>
+    <button
+      class="cart-toggle"
+      id="cart-toggle"
+      type="button"
+      aria-label="Открыть корзину"
+      aria-haspopup="dialog"
+      aria-controls="cart-dialog"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2ZM1 2v2h2l3.6 7.59-1.35 2.45C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45c.75 0 1.41-.41 1.75-1.03L21 4H5.21l-.94-2H1Zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2Z" />
+      </svg>
+      <span class="cart-toggle-label">Корзина</span>
+      <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+    </button>
+    <section class="initial" id="initial">
+      <div class="initial_container">
+        <div class="initial_main">
+          <h2>
+            Почувствуйте вкус настоящей <strong>Итальянской пиццы</strong>!
+          </h2>
+          <p>
+            Приготовлено по <strong>традиционным рецептам</strong> с лучшими
+            свежими ингредиентами.
+          </p>
+          <button href="#menu">Меню →</button>
+        </div>
+        <div class="initial_img">
+          <img
+            src="./img/optimized/ivan-torres-MQUqbmszGGM-unsplash.webp"
+            alt="Пицца с ингредиентами"
+            fetchpriority="high"
+          />
+        </div>
+      </div>
+    </section>
+    <main>
+      <section class="menu" id="menu">
+        <div class="menu_main" id="menu_main">
+          <p>Только свежые продукты<strong>✔</strong></p>
+          <h3>Меню</h3>
+          <p>Натуральный вкус<strong>✔</strong></p>
+        </div>
+        <div class="menu_undermain">
+          <p>При заказе от 2х пицц напиток в подарок</p>
+        </div>
+        <div class="menu_cards" id="menu_cards">
+          <div class="menu_card" data-base-price="3000">
+            <img
+              src="./img/optimized/doner.webp"
+              alt="Пицца Донерная"
+              loading="lazy"
+            />
+            <h2>Пицца "Донерная"</h2>
+            <p>Состав: томатный соус, курица, огурец, помидор, фри, сыр</p>
+            <span class="change_price"></span>
+            <span class="price">3000</span>
+            <p>тг</p>
+
+            <div class="menu_actions">
+              <div class="size_selection">
+                <input
+                  type="radio"
+                  id="size15_doner"
+                  name="size_doner"
+                  value="15"
+                />
+                <label for="size15_doner">15 см</label>
+                <input
+                  type="radio"
+                  id="size30_doner"
+                  name="size_doner"
+                  value="30"
+                  checked
+                />
+                <label for="size30_doner">30 см</label>
+                <input
+                  type="radio"
+                  id="size60_doner"
+                  name="size_doner"
+                  value="60"
+                />
+                <label for="size60_doner">60 см</label>
+              </div>
+              <div class="menu_quantity">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <input type="number" value="1" min="1" readonly />
+                <button onclick="increaseQuantity(this)">+</button>
+              </div>
+              <button class="menu_add_to_cart">Добавить в корзину</button>
+            </div>
+          </div>
+          <div class="menu_card" data-base-price="2200">
+            <img
+              src="./img/optimized/paperonia.webp"
+              alt="Пицца Паперони"
+              loading="lazy"
+            />
+            <h2>Пицца "Паперони"</h2>
+            <p>Состав: томатный соус, колбаса, сыр</p>
+            <span class="change_price"></span>
+            <span class="price">2200</span>
+            <p>тг</p>
+            <div class="menu_actions">
+              <div class="size_selection">
+                <input
+                  type="radio"
+                  id="size15_paperoni"
+                  name="size_paperoni"
+                  value="15"
+                />
+                <label for="size15_paperoni">15 см</label>
+                <input
+                  type="radio"
+                  id="size30_paperoni"
+                  name="size_paperoni"
+                  value="30"
+                  checked
+                />
+                <label for="size30_paperoni">30 см</label>
+                <input
+                  type="radio"
+                  id="size60_paperoni"
+                  name="size_paperoni"
+                  value="60"
+                />
+                <label for="size60_paperoni">60 см</label>
+              </div>
+              <div class="menu_quantity">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <input type="number" value="1" min="1" readonly />
+                <button onclick="increaseQuantity(this)">+</button>
+              </div>
+              <button class="menu_add_to_cart">Добавить в корзину</button>
+            </div>
+          </div>
+          <div class="menu_card" data-base-price="2300">
+            <img
+              src="./img/optimized/sorento.webp"
+              alt="Пицца Соренто"
+              loading="lazy"
+            />
+            <h2>Пицца "Соренто"</h2>
+            <p>Состав: томатный соус, колбаса, грибы, помидоры, сыр</p>
+            <span class="change_price"></span>
+            <span class="price">2300</span>
+            <p>тг</p>
+            <div class="menu_actions">
+              <div class="size_selection">
+                <input
+                  type="radio"
+                  id="size15_sorento"
+                  name="size_sorento"
+                  value="15"
+                />
+                <label for="size15_sorento">15 см</label>
+                <input
+                  type="radio"
+                  id="size30_sorento"
+                  name="size_sorento"
+                  value="30"
+                  checked
+                />
+                <label for="size30_sorento">30 см</label>
+                <input
+                  type="radio"
+                  id="size60_sorento"
+                  name="size_sorento"
+                  value="60"
+                />
+                <label for="size60_sorento">60 см</label>
+              </div>
+              <div class="menu_quantity">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <input type="number" value="1" min="1" readonly />
+                <button onclick="increaseQuantity(this)">+</button>
+              </div>
+              <button class="menu_add_to_cart">Добавить в корзину</button>
+            </div>
+          </div>
+          <div class="menu_card" data-base-price="2000">
+            <img
+              src="./img/optimized/gavai.webp"
+              alt="Гавайская пицца"
+              loading="lazy"
+            />
+            <h2>Пицца "Гавайская"</h2>
+            <p>Состав: томатный соус, ананас, сыр</p>
+            <span class="change_price"></span>
+            <span class="price">2000</span>
+            <p>тг</p>
+            <div class="menu_actions">
+              <div class="size_selection">
+                <input
+                  type="radio"
+                  id="size15_gavai"
+                  name="size_gavai"
+                  value="15"
+                />
+                <label for="size15_gavai">15 см</label>
+                <input
+                  type="radio"
+                  id="size30_gavai"
+                  name="size_gavai"
+                  value="30"
+                  checked
+                />
+                <label for="size30_gavai">30 см</label>
+                <input
+                  type="radio"
+                  id="size60_gavai"
+                  name="size_gavai"
+                  value="60"
+                />
+                <label for="size60_gavai">60 см</label>
+              </div>
+              <div class="menu_quantity">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <input type="number" value="1" min="1" readonly />
+                <button onclick="increaseQuantity(this)">+</button>
+              </div>
+              <button class="menu_add_to_cart">Добавить в корзину</button>
+            </div>
+          </div>
+          <div class="menu_card" data-base-price="2000">
+            <img
+              src="./img/optimized/margolite.webp"
+              alt="Пицца Марго лайт"
+              loading="lazy"
+            />
+            <h2>Пицца "Марго лайт"</h2>
+            <p>Состав: томатный соус,5 видов сыра</p>
+            <span class="change_price"></span>
+            <span class="price">2000</span>
+            <p>тг</p>
+            <div class="menu_actions">
+              <div class="size_selection">
+                <input
+                  type="radio"
+                  id="size15_margolite"
+                  name="size_margolite"
+                  value="15"
+                />
+                <label for="size15_margolite">15 см</label>
+                <input
+                  type="radio"
+                  id="size30_margolite"
+                  name="size_margolite"
+                  value="30"
+                  checked
+                />
+                <label for="size30_margolite">30 см</label>
+                <input
+                  type="radio"
+                  id="size60_margolite"
+                  name="size_margolite"
+                  value="60"
+                />
+                <label for="size60_margolite">60 см</label>
+              </div>
+              <div class="menu_quantity">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <input type="number" value="1" min="1" readonly />
+                <button onclick="increaseQuantity(this)">+</button>
+              </div>
+              <button class="menu_add_to_cart">Добавить в корзину</button>
+            </div>
+          </div>
+          <div class="menu_card" data-base-price="2200">
+            <img
+              src="./img/optimized/doncarleone.webp"
+              alt="Пицца Дон Карлеоне"
+              loading="lazy"
+            />
+            <h2>Пицца "Дон Карлеоне"</h2>
+            <p>Состав: соус Италия, ветчина гов., грибы, помидор, сыр</p>
+            <span class="change_price"></span>
+            <span class="price">2200</span>
+            <p>тг</p>
+            <div class="menu_actions">
+              <div class="size_selection">
+                <input
+                  type="radio"
+                  id="size15_doncarleone"
+                  name="size_doncarleone"
+                  value="15"
+                />
+                <label for="size15_doncarleone">15 см</label>
+                <input
+                  type="radio"
+                  id="size30_doncarleone"
+                  name="size_doncarleone"
+                  value="30"
+                  checked
+                />
+                <label for="size30_doncarleone">30 см</label>
+                <input
+                  type="radio"
+                  id="size60_doncarleone"
+                  name="size_doncarleone"
+                  value="60"
+                />
+                <label for="size60_doncarleone">60 см</label>
+              </div>
+              <div class="menu_quantity">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <input type="number" value="1" min="1" readonly />
+                <button onclick="increaseQuantity(this)">+</button>
+              </div>
+              <button class="menu_add_to_cart">Добавить в корзину</button>
+            </div>
+          </div>
+          <div class="menu_card" data-base-price="2400">
+            <img
+              src="./img/optimized/palermo.webp"
+              alt="Пицца Палермо"
+              loading="lazy"
+            />
+            <h2>Пицца "Полермо"</h2>
+            <p>Состав: томатный соус, курица коченая, грибы, маслины, сыр.</p>
+            <span class="change_price"></span>
+            <span class="price">2400</span>
+            <p>тг</p>
+            <div class="menu_actions">
+              <div class="size_selection">
+                <input
+                  type="radio"
+                  id="size15_palermo"
+                  name="size_palermo"
+                  value="15"
+                />
+                <label for="size15_palermo">15 см</label>
+                <input
+                  type="radio"
+                  id="size30_palermo"
+                  name="size_palermo"
+                  value="30"
+                  checked
+                />
+                <label for="size30_palermo">30 см</label>
+                <input
+                  type="radio"
+                  id="size60_palermo"
+                  name="size_palermo"
+                  value="60"
+                />
+                <label for="size60_palermo">60 см</label>
+              </div>
+              <div class="menu_quantity">
+                <button onclick="decreaseQuantity(this)">-</button>
+                <input type="number" value="1" min="1" readonly />
+                <button onclick="increaseQuantity(this)">+</button>
+              </div>
+              <button class="menu_add_to_cart">Добавить в корзину</button>
+            </div>
+          </div>
+        </div>
+        <button href="#" class="menu_button">смотреть ещё</button>
+      </section>
+    </main>
+    <!--  -->
+    <section class="contacts" id="contacts">
+      <div class="contacts_main">
+        <div class="contact_info">
+          <h2>Наши контакты</h2>
+          <p>
+            <strong>Адрес:</strong> Нуринский район,ул. Кайма Мухамедханова 42,
+            г.Астана
+          </p>
+          <p><strong>Телефон:</strong> +7 (777) 700-77-77</p>
+          <p><strong>Email:</strong> info@pizzamondo.com</p>
+          <p><strong>Часы работы:</strong> 10:00 - 23:00</p>
+        </div>
+        <div class="contact_map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2518.81188569419!2d71.38149829100756!3d51.14130238646209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sru!2skz!4v1742574184633!5m2!1sru!2skz"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    <!--  -->
+    <section class="reviews" id="reviews">
+      <div class="reviews-container">
+        <h1>Отзывы</h1>
+        <div class="reviews-card">
+          <h2>Ахмед</h2>
+          <h4 id="reviews-title"></h4>
+          <p id="reviews-content"></p>
+          <div class="qwe">
+            <button id="prev-part" class="history-nav">&larr;</button>
+            <button id="next-part" class="history-nav">&rarr;</button>
+          </div>
+        </div>
+        <div class="reviews-card">
+          <h2>Мурат</h2>
+          <h4 id="reviews-title"></h4>
+          <p id="reviews-content"></p>
+          <div class="qwe">
+            <button id="prev-part" class="history-nav">&larr;</button>
+            <button id="next-part" class="history-nav">&rarr;</button>
+          </div>
+        </div>
+        <div class="reviews-card">
+          <h2>Айдана</h2>
+          <h4 id="reviews-title"></h4>
+          <p id="reviews-content"></p>
+          <div class="qwe">
+            <button id="prev-part" class="history-nav">&larr;</button>
+            <button id="next-part" class="history-nav">&rarr;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  -->
+    <section class="about_us" id="about_us">
+      <div class="us_img">
+        <div class="left-column">
+          <img
+            src="./img/optimized/1gallery.webp"
+            alt="Интерьер Pizza Mondo"
+            loading="lazy"
+          />
+          <img
+            src="./img/optimized/2gallery.webp"
+            alt="Интерьер Pizza Mondo"
+            loading="lazy"
+          />
+        </div>
+        <img
+          src="./img/optimized/3gallery.webp"
+          alt="Пицца Pizza Mondo"
+          class="right-img"
+          loading="lazy"
+        />
+      </div>
+      <div class="us_main">
+        <h1>О Pizza Mondo</h1>
+        <p>
+          Добро пожаловать в <strong>Pizza Mondo</strong> – место, где каждая
+          пицца создается с любовью и страстью к настоящему итальянскому вкусу!
+          Мы используем только свежие ингредиенты, отборные сыры, ароматные
+          соусы и тонкое, хрустящее тесто, чтобы дарить вам незабываемое
+          гастрономическое удовольствие. У нас вы найдете классические и
+          авторские рецепты со всего мира: от традиционной «Маргариты» до
+          эксклюзивной «Дон Карлеоне». Выбирайте свой размер, добавляйте любимые
+          ингредиенты и наслаждайтесь идеальной пиццей в уютной атмосфере!
+        </p>
+        <p>
+          У нас вы найдете классические и авторские рецепты со всего мира: от
+          традиционной «Маргариты» до эксклюзивной «Дон Карлеоне». Выбирайте
+          свой размер, добавляйте любимые ингредиенты и наслаждайтесь идеальной
+          пиццей в уютной атмосфере!<br />
+          <strong
+            >Pizza Mondo – когда каждый кусочек приносит удовольствие!</strong
+          >
+        </p>
+      </div>
+    </section>
+    <!--  -->
+    <footer>
+      <div class="footer_container">
+        <div class="footer_name">
+          <h2>Pizza Mondo</h2>
+        </div>
+        <div class="footer_main">
+          <div class="footer_text">
+            <a href="#">Гостям</a>
+            <a href="#">Инвесторам</a>
+            <a href="#">Работникам</a>
+            <a href="#">Сотрудничество</a>
+          </div>
+          <div class="footer_social">
+            <a href="#" class="icon vk">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12.55 15.53c-1.26-.01-2.49-.26-3.43-.78-.85-.46-1.57-1.11-2.2-1.86-.96-1.15-1.8-2.38-2.6-3.63C3.8 8.67 3.5 8.13 3.21 7.58c-.1-.19-.23-.3-.43-.29-.17 0-.34 0-.51 0-.32.02-.44-.1-.37-.42.14-.65.28-1.31.43-1.96.05-.22.17-.3.4-.3h2.06c.32 0 .46.16.56.45.27.8.6 1.56 1.01 2.3.34.6.72 1.16 1.18 1.67.2.23.43.43.74.5.2.04.31-.05.36-.24.05-.16.08-.33.1-.5.04-.34.04-.69.03-1.04-.02-.64-.05-1.27-.09-1.91-.02-.3.06-.4.37-.4h2.1c.29 0 .38.08.4.37.04.67.07 1.33.08 2 .01.42.03.85.09 1.27.02.14.07.28.14.41.1.17.27.2.43.12.19-.1.34-.25.49-.41.73-.79 1.31-1.7 1.8-2.67.2-.39.38-.79.55-1.2.08-.2.2-.3.41-.3h2.17c.06 0 .12 0 .18 0 .26.01.36.13.27.38-.33.96-.73 1.88-1.26 2.73-.52.83-1.08 1.64-1.72 2.4-.31.38-.63.75-.96 1.12-.1.11-.2.21-.3.32-.13.14-.14.26-.06.44.22.51.47.99.74 1.47.2.36.41.72.66 1.05.08.11.2.2.33.23.25.05.51.07.77.1.22.02.45.03.67.05.28.02.39.13.45.39.07.32.14.64.21.96.03.15.05.3.09.45.07.31 0 .41-.3.41h-1.52c-.58 0-1.14-.05-1.67-.25-.59-.21-1.14-.5-1.64-.88-.44-.35-.85-.75-1.23-1.18-.19-.21-.36-.43-.52-.66-.06-.09-.12-.12-.22-.1-.22.06-.44.1-.66.13z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="icon instagram">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M7.5 2h9a5.5 5.5 0 0 1 5.5 5.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm4.5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="icon twitter">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M23 3a10.84 10.84 0 0 1-3.14.86A4.48 4.48 0 0 0 22.38 1c-.88.52-1.85.9-2.88 1.1A4.52 4.52 0 0 0 11 5.7a12.88 12.88 0 0 1-9.33-4.72 4.48 4.48 0 0 0 1.38 6A4.48 4.48 0 0 1 .88 6v.06A4.5 4.5 0 0 0 4.5 11a4.48 4.48 0 0 1-2 .08A4.52 4.52 0 0 0 8 14a9.08 9.08 0 0 1-5.6 2A9.72 9.72 0 0 1 1 16.82a12.81 12.81 0 0 0 7 2c8.38 0 13-7 13-13 0-.2 0-.4-.02-.6A9.18 9.18 0 0 0 23 3z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="icon whatsapp">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M16.1 13.6c-.26-.13-1.55-.76-1.79-.85-.24-.1-.42-.13-.6.13-.18.26-.69.85-.85 1.03-.16.18-.31.2-.57.07-.26-.13-1.1-.4-2.09-1.26-.77-.68-1.3-1.53-1.46-1.8-.15-.26-.02-.41.11-.55.12-.12.26-.31.38-.46.12-.16.15-.26.23-.42.08-.16.04-.3-.02-.42-.06-.12-.6-1.44-.83-1.97-.22-.53-.45-.46-.62-.47-.16-.01-.34-.01-.52-.01a1.04 1.04 0 0 0-.74.34c-.26.26-.99.96-.99 2.34s1.02 2.7 1.17 2.88c.16.17 2.02 3.1 4.88 4.22 1.53.63 2.12.69 2.88.58.44-.07 1.55-.63 1.77-1.24.22-.6.22-1.11.16-1.24-.07-.13-.24-.21-.5-.34z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer_contact">
+          <p>+7 (777) 700-75-75<br /><strong>служба поддержки</strong></p>
+        </div>
+      </div>
+    </footer>
+    <dialog class="cart-dialog" id="cart-dialog" aria-labelledby="cart-title">
+      <div class="cart-header">
+        <div>
+          <p class="cart-eyebrow">PIZZA MONDO</p>
+          <h2 id="cart-title">Ваша корзина</h2>
+        </div>
+        <button
+          class="cart-close"
+          id="cart-close"
+          type="button"
+          aria-label="Закрыть корзину"
+        >
+          &times;
+        </button>
+      </div>
+      <p class="cart-empty" id="cart-empty">В корзине пока пусто. Выберите пиццу в меню.</p>
+      <ul class="cart-items" id="cart-items" aria-live="polite"></ul>
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Итого</span>
+          <strong id="cart-total">0 тг</strong>
+        </div>
+        <button class="cart-clear" id="cart-clear" type="button" disabled>
+          Очистить корзину
+        </button>
+      </div>
+    </dialog>
+  </body>
+  <script src="./js/jquery-3.6.0.min.js"></script>
+  <script src="./js/indexjs.js"></script>
+</html>
