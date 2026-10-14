@@ -27,7 +27,9 @@
       aria-controls="cart-dialog"
     >
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2ZM1 2v2h2l3.6 7.59-1.35 2.45C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45c.75 0 1.41-.41 1.75-1.03L21 4H5.21l-.94-2H1Zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2Z" />
+        <path
+          d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2ZM1 2v2h2l3.6 7.59-1.35 2.45C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45c.75 0 1.41-.41 1.75-1.03L21 4H5.21l-.94-2H1Zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2Z"
+        />
       </svg>
       <span class="cart-toggle-label">Корзина</span>
       <span class="cart-count" id="cart-count" aria-live="polite">0</span>
@@ -545,16 +547,23 @@
           &times;
         </button>
       </div>
-      <p class="cart-empty" id="cart-empty">В корзине пока пусто. Выберите пиццу в меню.</p>
+      <p class="cart-empty" id="cart-empty">
+        В корзине пока пусто. Выберите пиццу в меню.
+      </p>
       <ul class="cart-items" id="cart-items" aria-live="polite"></ul>
       <div class="cart-footer">
         <div class="cart-total-row">
           <span>Итого</span>
           <strong id="cart-total">0 тг</strong>
         </div>
-        <button class="cart-clear" id="cart-clear" type="button" disabled>
-          Очистить корзину
-        </button>
+        <div class="cart-buttons">
+          <button class="cart-clear" id="cart-clear" type="button" disabled>
+            Очистить корзину
+          </button>
+          <button class="cart-go" id="cart-go" type="button">
+            Оформить заказ
+          </button>
+        </div>
       </div>
     </dialog>
   </body>
