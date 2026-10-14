@@ -117,11 +117,16 @@ p {
   margin-right: 25px;
 }
 .initial_main a {
-  margin-left: 150px;
-  width: 150px;
-  height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  min-height: 50px;
+  margin-left: 0;
+  padding: 8px 20px;
   border-radius: 25px;
   background-color: transparent;
+  text-decoration: none;
   color: white;
   font-size: 22px;
   font-weight: 500;
@@ -130,6 +135,7 @@ p {
 }
 .initial_main a:hover {
   color: #d8d8d8;
+  text-decoration: none;
   border: 2px solid #d8911f;
   transform: translateY(-4px);
   box-shadow: 1px 1px 0px #f5b44f;
@@ -591,7 +597,7 @@ footer {
     font-size: 18px;
     line-height: 1.7;
   }
-  .initial_main button {
+  .initial_main a {
     margin-left: 0;
   }
   .initial_img {
@@ -731,9 +737,9 @@ footer {
     font-size: 16px;
     line-height: 1.6;
   }
-  .initial_main button {
-    width: 140px;
-    height: 46px;
+  .initial_main a {
+    min-width: 140px;
+    min-height: 46px;
     font-size: 18px;
   }
   .initial_img {
@@ -747,13 +753,26 @@ footer {
     padding: 28px 12px;
   }
   .menu_main {
-    gap: 8px 12px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
   }
   .menu_main h3 {
+    order: -1;
     font-size: 32px;
   }
   .menu_main p {
+    width: 100%;
+    text-align: center;
+  }
+  .menu_main p {
     font-size: 13px;
+  }
+  .menu_undermain p {
+    max-width: 340px;
+    margin: 0 auto;
+    text-align: center;
   }
   .menu_cards {
     gap: 16px;
